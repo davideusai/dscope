@@ -234,8 +234,10 @@ dscope/
 ├── registry/          → Registre machine‑lisible (source de vérité)
 ├── dpcr/              → Processus d’évolution du protocole
 ├── examples/          → Exemples de trames, CSV, diagrammes
+├── knowledge/         → Notes internes, recherches,
 ├── tools/             → Outils techniques (validators, converters)
 ├── modules/           → Tous les firmwares embarqués
+├── playground         → Zone d’expérimentation, prototypes
 ├── libs/              → Bibliothèques communes
 └── analyzer/          → Outil d’analyse, dashboards, parsing avancé
 ```
@@ -273,6 +275,7 @@ dscope/
 │   ├── csv/                  → Exemples de logs CSV
 │   └── diagrams/             → Diagrammes et illustrations
 │
+
 ├── tools/                    → Outils techniques
 │   ├── validators/           → Scripts de validation
 │   └── converters/           → Scripts de conversion
