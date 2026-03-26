@@ -2,6 +2,12 @@
 # D-Scope
 
 <p align="left">
+  ... tes badges ...
+</p>
+
+Open, modular telemetry standard for comfort and environmental devices.
+
+<p align="left">
   <img src="https://img.shields.io/badge/status-work_in_progress-orange" alt="Status: Work in progress" />
   <img src="https://img.shields.io/badge/license-Apache_2.0-blue" alt="License: Apache 2.0" />
   <img src="https://img.shields.io/badge/standard-DS--000-lightgrey" alt="Standard version: DS-000" />
