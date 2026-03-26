@@ -325,25 +325,3 @@ La licence Apache 2.0 est aujourd’hui l’une des plus utilisées pour les pro
 qui visent à devenir des standards ouverts (Kubernetes, MQTT, TensorFlow, VS Code…).
 
 Le texte complet de la licence est disponible dans le fichier [`LICENSE`](LICENSE).
-
-```
-dscope/
-├── analyzer/
-├── docs/
-├── dpcr/
-├── examples/
-├── libs/
-├── modules/
-│   ├── comfort/
-│   └── hub/
-├── registry/
-│   ├── fields.json
-│   └── modules.json
-├── specs/
-├── tools/
-├── .gitignore
-├── LICENSE
-├── NOTICE
-├── README.md
-└── ROADMAP.md
-```
