@@ -1,0 +1,28 @@
+D‑Scope — Open Standard for Modular Environmental, Flow, Energy and HVAC Monitoring
+Copyright (c) 2024‑2026 Davide Usai
+
+This project is licensed under the Apache License, Version 2.0.
+https://github.com/davideusai/dscope
+
+D‑Scope is an open, modular protocol designed to unify environmental, flow,
+energy and HVAC monitoring across heterogeneous hardware platforms. It includes:
+
+• A machine‑readable Registry defining all protocol fields and modules
+• A formal DPCR (D‑Scope Protocol Change Request) process governing protocol evolution
+• A set of firmware modules targeting ESP32, RP2040, PIC and other MCUs
+• Shared libraries implementing the D‑Scope protocol and utilities
+• Tools for validation, conversion, analysis and documentation generation
+
+This distribution may include contributions from external authors. All
+contributions are governed by the Apache License 2.0 unless otherwise stated.
+
+The D‑Scope Registry (fields.json and modules.json) is the authoritative source
+of truth for all protocol definitions. Any modification to the Registry must be
+proposed through a DPCR and validated before inclusion.
+
+The D‑Scope protocol, Registry, and associated tools are intended to remain
+fully open and interoperable. Implementations may be proprietary or open‑source,
+provided that this NOTICE file and the Apache License 2.0 are preserved in any
+redistribution.
+
+If this project is redistributed, this NOTICE file must be included.
