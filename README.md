@@ -218,7 +218,7 @@ Code partagé entre modules :
 
 
 # 📁 Arborescence du projet
-
+```
 dscope/
 ├── docs/              → Documentation narrative
 ├── specs/             → Spécifications officielles du protocole
@@ -229,10 +229,10 @@ dscope/
 ├── modules/           → Tous les firmwares embarqués
 ├── libs/              → Bibliothèques communes
 └── analyzer/          → Outil d’analyse, dashboards, parsing avancé
-
+```
 
 # 🧩 Arborescence détaillée
-
+```
 dscope/
 ├── README.md                 → Présentation générale du projet
 ├── ROADMAP.md                → Vision et étapes du projet
@@ -240,40 +240,33 @@ dscope/
 ├── NOTICE                    → Mentions légales et attributions
 ├── .gitignore                → Fichiers ignorés par Git
 └── dscope.code-workspace     → Workspace VS Code
-
 │
 ├── docs/                     → Documentation narrative
 │   ├── architecture/         → Schémas et architecture globale
 │   ├── protocol/             → Explications du protocole
 │   ├── hardware/             → Documentation matérielle
 │   └── software/             → Documentation logicielle
-
 │
 ├── specs/                    → Spécifications officielles
 │   ├── dscope-message-spec-v0.1.md
 │   └── changelog.md
-
 │
 ├── registry/                 → Registre machine‑lisible
 │   ├── fields.json           → Définition des champs
 │   └── modules.json          → Définition des modules
-
 │
 ├── dpcr/                     → Processus d’évolution du protocole
 │   ├── DPCR-template.md      → Modèle de proposition
 │   └── DPCR-0001.md          → Exemple de DPCR
-
 │
 ├── examples/                 → Exemples concrets
 │   ├── frames/               → Exemples de trames
 │   ├── csv/                  → Exemples de logs CSV
 │   └── diagrams/             → Diagrammes et illustrations
-
 │
 ├── tools/                    → Outils techniques
 │   ├── validators/           → Scripts de validation
 │   └── converters/           → Scripts de conversion
-
 │
 ├── modules/                  → Tous les firmwares embarqués
 │   ├── comfort/              → Module Comfort
@@ -281,7 +274,6 @@ dscope/
 │   ├── energy/               → Module Energy
 │   ├── hvac-pac/             → Module HVAC/PAC
 │   └── hub/                  → Module Hub
-
 │
 ├── libs/                     → Bibliothèques communes
 │   ├── dscope-protocol/      → Parsing et génération de trames
@@ -290,7 +282,6 @@ dscope/
 │   └── dscope-utils/         → Helpers et utilitaires
 │       ├── src/
 │       └── include/
-
 │
 └── analyzer/                 → Outil d’analyse D‑Scope
     ├── README.md             → Présentation générale de l’Analyzer
@@ -315,7 +306,7 @@ dscope/
         ├── usage.md
         ├── dashboards.md
         └── plugins.md
-
+```
 ---
 
 # 📄 Licence
@@ -335,3 +326,24 @@ qui visent à devenir des standards ouverts (Kubernetes, MQTT, TensorFlow, VS Co
 
 Le texte complet de la licence est disponible dans le fichier [`LICENSE`](LICENSE).
 
+```
+dscope/
+├── analyzer/
+├── docs/
+├── dpcr/
+├── examples/
+├── libs/
+├── modules/
+│   ├── comfort/
+│   └── hub/
+├── registry/
+│   ├── fields.json
+│   └── modules.json
+├── specs/
+├── tools/
+├── .gitignore
+├── LICENSE
+├── NOTICE
+├── README.md
+└── ROADMAP.md
+```
