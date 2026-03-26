@@ -1,11 +1,4 @@
 # 📘 D‑Scope — Standard Ouvert pour la Mesure et la Télémétrie Multi‑Modules
-# D-Scope
-
-<p align="left">
-  ... tes badges ...
-</p>
-
-Open, modular telemetry standard for comfort and environmental devices.
 
 <p align="left">
   <img src="https://img.shields.io/badge/status-work_in_progress-orange" alt="Status: Work in progress" />
@@ -13,6 +6,8 @@ Open, modular telemetry standard for comfort and environmental devices.
   <img src="https://img.shields.io/badge/standard-DS--000-lightgrey" alt="Standard version: DS-000" />
   <img src="https://img.shields.io/badge/modular-architecture-success" alt="Modular architecture" />
 </p>
+
+Open, modular telemetry standard for comfort and environmental devices.
 
 D‑Scope est un **écosystème ouvert**, modulaire et local-first, conçu pour mesurer, collecter et analyser des données provenant de modules variés : environnement, énergie, HVAC/PAC, débit, capteurs spécialisés, etc.
 
