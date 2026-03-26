@@ -333,7 +333,4 @@ Ce choix reflète la philosophie du projet :
 - encourager les contributions sans imposer de contraintes fortes,
 - assurer la **pérennité** du protocole et de son écosystème.
 
-La licence Apache 2.0 est aujourd’hui l’une des plus utilisées pour les projets
-qui visent à devenir des standards ouverts (Kubernetes, MQTT, TensorFlow, VS Code…).
-
 Le texte complet de la licence est disponible dans le fichier [`LICENSE`](LICENSE).
