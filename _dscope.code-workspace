@@ -1,8 +1,40 @@
 {
     "folders": [
-    { "path": "." }
-]
-,
+        { "path": "." },
+		{
+            "path": "docs"
+        },
+        {
+            "path": "dpcr"
+        },
+        {
+            "path": "examples"
+        },
+        {
+            "path": "hardware"
+        },
+        {
+            "path": "knowledge"
+        },
+        {
+            "path": "libs"
+        },
+        {
+            "path": "modules"
+        },
+        {
+            "path": "playground"
+        },
+        {
+            "path": "registry"
+        },
+        {
+            "path": "specs"
+        },
+        {
+            "path": "tools"
+        }
+    ],
     "settings": {
         "files.exclude": {
             "**/.git": true,

@@ -1,4 +1,4 @@
-# 📘 D‑Scope — Standard Ouvert pour la Mesure et la Télémétrie Multi‑Modules
+# 📘 D‑Scope — Open Standard for Multi‑Module Measurement and Telemetry
 
 <p align="left">
   <img src="https://img.shields.io/badge/status-work_in_progress-orange" alt="Status: Work in progress" />
@@ -9,206 +9,229 @@
 
 Open, modular telemetry standard for comfort and environmental devices.
 
-D‑Scope est un **écosystème ouvert**, modulaire et local-first, conçu pour mesurer, collecter et analyser des données provenant de modules variés : environnement, énergie, HVAC/PAC, débit, capteurs spécialisés, etc.
+D‑Scope is an **open, modular, local‑first ecosystem** designed to measure, collect, and analyze data from a wide range of modules: environmental sensors, energy monitoring, HVAC/heat pumps, flow measurement, and specialized sensors.
 
-Il repose sur :
-- un **protocole simple et extensible** (clé=valeur),
-- des **modules sans‑fil autonomes**,
-- un **Hub local** qui collecte et enrichit les trames,
-- un **Analyzer** extensible pour le traitement et la visualisation.
+It is built around:
 
-D‑Scope vise à devenir un **standard ouvert**, reproductible, documenté et durable pour la télémétrie locale.
+- a **simple and extensible protocol** (key=value),
+- **autonomous wireless modules**,
+- a **local Hub** that collects and enriches frames,
+- an **extensible Analyzer** for processing and visualization.
 
----
-
-# 🎯 Objectifs du projet
-
-## Objectifs principaux
-- Définir un **protocole ouvert et extensible** pour des modules de mesure hétérogènes.  
-- Fournir des **modules simples et autonomes** (Comfort, Flow, Energy, HVAC/PAC…).  
-- Centraliser les données via un **Hub local** enrichissant les trames.  
-- Proposer un **Analyzer** capable de calculer, historiser et visualiser.  
-- Offrir une **intégration native** avec Home Assistant (via MQTT).  
-- Permettre une **interopérabilité** avec Alexa (via Home Assistant).  
-- Documenter le standard : specs, registre, DPCR, exemples.
-
-## Principes fondamentaux
-- **Local-first** : aucune dépendance cloud.  
-- **Simplicité** : protocole clé=valeur, modules minimalistes.  
-- **Modularité** : chaque module est indépendant.  
-- **Évolutivité** : processus DPCR pour faire évoluer le standard.   
-- **Interopérabilité** : MQTT, JSON, Home Assistant.
+D‑Scope aims to become an **open, reproducible, documented, and durable standard** for local telemetry.
 
 ---
 
-# 🧩 Architecture générale
+# 🎯 Project Goals
+
+## Main Objectives
+
+- Define an **open and extensible protocol** for heterogeneous measurement modules.  
+- Provide **simple and autonomous modules** (Comfort, Flow, Energy, HVAC/PAC…).  
+- Centralize data through a **local Hub** that enriches frames.  
+- Offer an **Analyzer** capable of computing, storing, and visualizing data.  
+- Provide **native integration** with Home Assistant (via MQTT).  
+- Enable **interoperability** with Alexa (via Home Assistant).  
+- Document the standard: specs, registry, DPCR, examples.
+
+## Core Principles
+
+- **Local‑first**: no cloud dependency.  
+- **Simplicity**: key=value protocol, minimalist modules.  
+- **Modularity**: each module is independent.  
+- **Scalability**: DPCR process for evolving the standard.  
+- **Interoperability**: MQTT, JSON, Home Assistant.
+
+---
+
+# 🧩 Overall Architecture
 
 ## Modules
-- Envoient des trames radio simples (clé=valeur).  
-- Sont spécialisés par fonction (Comfort, Flow, Energy, HVAC/PAC…).  
-- Utilisent ESP32 / RP2040 / PIC selon le cas.
+
+- Send simple radio frames (key=value).  
+- Are specialized by function (Comfort, Flow, Energy, HVAC/PAC…).  
+- Use ESP32 / RP2040 / PIC depending on the use case.
 
 ## Hub
-- Reçoit les trames radio.  
-- Ajoute des métadonnées : RSSI, CHK, timestamp.  
-- Publie en MQTT.  
-- Peut exposer une API locale.
+
+- Receives radio frames.  
+- Adds metadata: RSSI, CHK, timestamp.  
+- Publishes to MQTT.  
+- May expose a local API.
 
 ## Analyzer
-- Récupère les données via MQTT.  
-- Calcule, historise, visualise.  
+
+- Retrieves data via MQTT.  
+- Computes, stores, and visualizes.  
 
 ---
 
-# 🧱 Modules D‑Scope
+# 🧱 D‑Scope Modules
 
 ## 1. Comfort Module
-Capteur environnemental intérieur :
-- Température (TIN)  
-- Humidité (RHIN)  
-- Qualité d’air 
-- Envoi périodique des mesures
+
+Indoor environmental sensor:
+
+- Temperature (TIN)  
+- Humidity (RHIN)  
+- Air quality  
+- Periodic measurement transmission
 
 ## 2. Flow Module
-Mesure des débits :
-- Débit d’eau
-- Débit d’air  
-- Températures associées
+
+Flow measurement:
+
+- Water flow  
+- Air flow  
+- Associated temperatures
 
 ## 3. Energy Module
-Mesures énergétiques :
-- Puissance instantanée  
-- Énergie cumulée  
-- Tension / courant  
-- Facteur de puissance
+
+Energy monitoring:
+
+- Instant power  
+- Cumulative energy  
+- Voltage / current  
+- Power factor
 
 ## 4. HVAC/PAC Module
-Module spécialisé pour les pompes à chaleur :
-- Températures aller/retour  
-- Pressions  
-- États de fonctionnement  
-- Codes d’erreur éventuels
+
+Heat pump monitoring:
+
+- Supply/return temperatures  
+- Pressures  
+- Operating states  
+- Error codes
 
 ## 5. Hub Module
-Cœur du système :
-- Réception radio  
-- Enrichissement des trames  
-- Publication MQTT  
-- API locale (optionnel)
+
+System core:
+
+- Radio reception  
+- Frame enrichment  
+- MQTT publication  
+- Optional local API
 
 ## 6. PIC Module
-Module ultra‑low‑power :
-- Capteurs simples  
-- Transmission radio  
-- Firmware XC8 + Makefile
+
+Ultra‑low‑power module:
+
+- Simple sensors  
+- Radio transmission  
+- XC8 firmware + Makefile
 
 ---
 
-# 📡 Protocole D‑Scope
+# 📡 D‑Scope Protocol
 
-## Format général
-Protocole **clé=valeur**, simple, robuste, lisible.
+## General Format
 
-Exemple :
-ID=02;TYPE=COMFORT;TIN=21.4;RHIN=48;BAT=3.01
+A **key=value** protocol: simple, robust, readable.
+
+Example: ID=02;TYPE=COMFORT;TIN=21.4;RHIN=48;BAT=3.01
 
 
-## Enrichissement par le Hub
-Le Hub ajoute :
+## Hub Enrichment
+
+The Hub adds:
+
 - `RSSI`  
 - `CHK` (checksum)  
 - `TS` (timestamp)  
-- `SRC` (source radio)
+- `SRC` (radio source)
 
-## Registre JSON
-Deux fichiers centraux :
-- `fields.json` → définition des champs  
-- `modules.json` → définition des modules
+## JSON Registry
 
-## Évolution du protocole
-Processus DPCR (D‑Scope Protocol Change Request) :
+Two central files:
+
+- `fields.json` → field definitions  
+- `modules.json` → module definitions
+
+## Protocol Evolution
+
+DPCR (D‑Scope Protocol Change Request) process:
+
 - `DPCR-template.md`  
-- `DPCR-0001.md` (exemple)
+- `DPCR-0001.md` (example)
 
 ---
 
-# 📁 Organisation du projet D‑Scope
+# 📁 D‑Scope Project Structure
 
-L’arborescence de D‑Scope est conçue pour être **claire, modulaire et durable**, en séparant explicitement :
+The D‑Scope repository is designed to be **clear, modular, and durable**, explicitly separating:
 
-- la **documentation** (pour les humains),
-- les **spécifications** (référence normative),
-- le **registre** (source de vérité machine‑lisible),
-- le **processus d’évolution** (DPCR),
-- les **modules firmware**,
-- les **bibliothèques communes**,
-- les **outils techniques**.
+- **documentation** (for humans),  
+- **specifications** (normative reference),  
+- the **registry** (machine‑readable source of truth),  
+- the **evolution process** (DPCR),  
+- **firmware modules**,  
+- **shared libraries**,  
+- **technical tools**.
 
-Cette structure permet à D‑Scope d’être un **standard ouvert**, facile à maintenir et à étendre.
+This structure ensures D‑Scope remains an **open standard**, easy to maintain and extend.
 
 ---
 
-## 🧠 Principes de structuration
+# 🧠 Structuring Principles
 
 ## ✔ Documentation (`docs/`)
-Contient **tout ce qui explique** le fonctionnement du projet :  
-guides, schémas, architecture, protocoles, hardware, software.
 
-C’est une documentation **narrative**, destinée aux humains.
+Contains **all human‑oriented explanations**:  
+guides, diagrams, architecture, protocol, hardware, software.
 
-## ✔ Spécifications (`specs/`)
-Contient les **documents normatifs** du protocole :  
-format des trames, règles officielles, versions, changelog.
+## ✔ Specifications (`specs/`)
 
-C’est la **référence technique** du standard.
+Contains the **normative documents** of the protocol:  
+frame format, official rules, versions, changelog.
 
-## ✔ Registre (`registry/`)
-Contient les fichiers **machine‑lisibles** :
+## ✔ Registry (`registry/`)
 
-- `fields.json` : liste des champs autorisés  
-- `modules.json` : liste des modules et de leurs champs  
+Contains **machine‑readable files**:
 
-Ce registre est utilisé par :
+- `fields.json`  
+- `modules.json`  
 
-- les outils de validation  
-- le Hub  
-- l’Analyzer  
-- les générateurs de documentation  
-- les modules eux‑mêmes  
+Used by:
 
-C’est la **source de vérité unique** du standard.
+- validation tools  
+- the Hub  
+- the Analyzer  
+- documentation generators  
+- modules  
+
+This is the **single source of truth**.
 
 ## ✔ DPCR (`dpcr/`)
-Le **D‑Scope Protocol Change Request** est le processus formel pour :
 
-- proposer une évolution du protocole  
-- analyser les impacts  
-- documenter les décisions  
-- garantir la cohérence du standard  
+The **formal process** for evolving the protocol:
 
-La documentation dit **ce qui existe**.  
-La DPCR dit **pourquoi ça change**.
+- propose changes  
+- analyze impacts  
+- document decisions  
+- ensure consistency  
 
-## ✔ Exemples (`examples/`)
-Contient des exemples concrets :
+Documentation says **what exists**.  
+DPCR explains **why it changes**.
 
-- trames brutes  
-- fichiers CSV  
-- diagrammes  
+## ✔ Examples (`examples/`)
 
-Utile pour les tests, la compréhension et la validation.
+Concrete examples:
 
-## ✔ Outils (`tools/`)
-Scripts et utilitaires :
+- raw frames  
+- CSV logs  
+- diagrams  
 
-- validateurs de trames  
-- convertisseurs  
-- outils d’analyse  
+## ✔ Tools (`tools/`)
 
-Ces outils peuvent utiliser le registre pour valider ou générer des données.
+Scripts and utilities:
+
+- frame validators  
+- converters  
+- analysis tools  
 
 ## ✔ Modules (`modules/`)
-Chaque module est un projet indépendant :
+
+Each module is an independent project:
 
 - Comfort  
 - Flow  
@@ -217,185 +240,44 @@ Chaque module est un projet indépendant :
 - Hub  
 - PIC module  
 
-Chaque module possède son propre firmware, sa documentation et sa configuration.
+## ✔ Libraries (`libs/`)
 
-## ✔ Bibliothèques (`libs/`)
-Code partagé entre modules :
+Shared code:
 
-- `dscope-protocol` : parsing, génération de trames  
-- `dscope-utils` : helpers, conversions, outils génériques  
+- `dscope-protocol` → frame parsing & generation  
+- `dscope-utils` → helpers and utilities  
 
-
-# 📁 Arborescence du projet
-```
-dscope/
-├── docs/              → Documentation narrative
-├── specs/             → Spécifications officielles du protocole
-├── registry/          → Registre machine‑lisible (source de vérité)
-├── dpcr/              → Processus d’évolution du protocole
-├── examples/          → Exemples de trames, CSV, diagrammes
-├── knowledge/         → Notes internes, recherches,
-├── tools/             → Outils techniques (validators, converters)
-├── modules/           → Tous les firmwares embarqués
-├── playground         → Zone d’expérimentation, prototypes
-├── libs/              → Bibliothèques communes
-└── analyzer/          → Outil d’analyse, dashboards, parsing avancé
-```
-
-# 🧩 Arborescence détaillée
-```
-dscope/
-├── README.md                 → Présentation générale du projet
-├── ROADMAP.md                → Vision et étapes du projet
-├── LICENSE                   → Licence Apache 2.0
-├── NOTICE                    → Mentions légales et attributions
-├── .gitignore                → Fichiers ignorés par Git
-└── dscope.code-workspace     → Workspace VS Code
-│
-├── docs/                     → Documentation narrative
-│   ├── architecture/         → Schémas et architecture globale
-│   ├── protocol/             → Explications du protocole
-│   ├── hardware/             → Documentation matérielle
-│   └── software/             → Documentation logicielle
-│
-├── specs/                    → Spécifications officielles
-│   ├── dscope-message-spec-v0.1.md
-│   └── changelog.md
-│
-├── registry/                 → Registre machine‑lisible
-│   ├── fields.json           → Définition des champs
-│   └── modules.json          → Définition des modules
-│
-├── dpcr/                     → Processus d’évolution du protocole
-│   ├── DPCR-template.md      → Modèle de proposition
-│   └── DPCR-0001.md          → Exemple de DPCR
-│
-├── examples/                 → Exemples concrets
-│   ├── frames/               → Exemples de trames
-│   ├── csv/                  → Exemples de logs CSV
-│   └── diagrams/             → Diagrammes et illustrations
-│
-├── tools/                    → Outils techniques
-│   ├── validators/           → Scripts de validation
-│   └── converters/           → Scripts de conversion
-│
-├── modules/                  → Tous les firmwares embarqués
-│   ├── comfort/              → Module Comfort
-│   ├── flow/                 → Module Flow
-│   ├── energy/               → Module Energy
-│   ├── hvac-pac/             → Module HVAC/PAC
-│   └── hub/                  → Module Hub
-│
-├── libs/                     → Bibliothèques communes
-│   ├── dscope-protocol/      → Parsing et génération de trames
-│   │   ├── src/
-│   │   └── include/
-│   └── dscope-utils/         → Helpers et utilitaires
-│       ├── src/
-│       └── include/
-│
-├── analyzer/                 → Outil d’analyse D‑Scope
-│   ├── README.md             → Présentation générale de l’Analyzer
-│   │
-│   ├── src/                  → Code source principal
-│   │   ├── core/             → Parsing, validation, registry loading
-│   │   ├── ui/               → Interface (CLI, web, desktop)
-│   │   ├── widgets/          → Widgets graphiques
-│   │   ├── exporters/        → CSV, JSON, MQTT, InfluxDB…
-│   │   └── utils/
-│   │
-│   ├── plugins/              → Extensions externes
-│   │   └── README.md
-│   │
-│   ├── examples/             → Exemples Analyzer
-│   │   ├── frames/           → Trames d’exemple
-│   │   ├── sessions/         → Sessions d’analyse
-│   │   └── dashboards/       → Dashboards préconfigurés
-│   │
-│   └── docs/                 → Documentation utilisateur
-│       ├── installation.md
-│       ├── usage.md
-│       ├── dashboards.md
-│       └── plugins.md
-│
-├── analyzer/                 → Outil d’analyse D‑Scope
-│   ├── README.md             → Présentation générale de l’Analyzer
-│   │
-│   ├── src/                  → Code source principal
-│   │   ├── core/             → Parsing, validation, registry loading
-│   │   ├── ui/               → Interface (CLI, web, desktop)
-│   │   ├── widgets/          → Widgets graphiques
-│   │   ├── exporters/        → CSV, JSON, MQTT, InfluxDB…
-│   │   └── utils/
-│   │
-│   ├── plugins/              → Extensions externes
-│   │   └── README.md
-│   │
-│   ├── examples/             → Exemples Analyzer
-│   │   ├── frames/           → Trames d’exemple
-│   │   ├── sessions/         → Sessions d’analyse
-│   │   └── dashboards/       → Dashboards préconfigurés
-│   │
-│   └── docs/                 → Documentation utilisateur
-│       ├── installation.md
-│       ├── usage.md
-│       ├── dashboards.md
-│       └── plugins.md
-│
-└── hardware/                 → Écosystème matériel D‑Scope
-    ├── common/               → Ressources partagées
-    │   ├── symbols/          → Symboles électroniques communs
-    │   ├── footprints/       → Empreintes communes
-    │   └── templates/        → Modèles de schémas / PCB
-    │
-    ├── guidelines/           → Règles globales de conception
-    │   ├── design-rules.md
-    │   ├── naming-conventions.md
-    │   └── electrical-rules.md
-    │
-    └── modules/              → Hardware spécifique à chaque module
-        ├── comfort/
-        │   ├── schematics/   → Schémas du module Comfort
-        │   ├── pcb/          → PCB du module Comfort
-        │   ├── bom.csv       → BOM spécifique
-        │   └── tests/        → Tests hardware
-        │
-        ├── flow/
-        │   ├── schematics/
-        │   ├── pcb/
-        │   ├── bom.csv
-        │   └── tests/
-        │
-        ├── energy/
-        │   ├── schematics/
-        │   ├── pcb/
-        │   ├── bom.csv
-        │   └── tests/
-        │
-        ├── hub/
-        │   ├── schematics/
-        │   ├── pcb/
-        │   ├── bom.csv
-        │   └── tests/
-        │
-        └── hvac-pac/
-            ├── schematics/
-            ├── pcb/
-            ├── bom.csv
-            └── tests/
-```
 ---
 
-# 📄 Licence
+# 📁 Project Tree
 
-D‑Scope est distribué sous licence **Apache License 2.0**.
+dscope/
+├── docs/              → Narrative documentation
+├── specs/             → Official protocol specifications
+├── registry/          → Machine‑readable registry (source of truth)
+├── dpcr/              → Protocol evolution process
+├── examples/          → Frames, CSV logs, diagrams
+├── hardware/          → Contains the full D‑Scope hardware ecosystem
+├── knowledge/         → Internal notes, research
+├── tools/             → Technical tools (validators, converters)
+├── modules/           → All embedded firmwares
+├── playground         → Experiments and prototypes
+├── libs/              → Shared libraries
+└── analyzer/          → Analysis tool, dashboards, advanced parsing
 
-Ce choix reflète la philosophie du projet :
 
-- garantir un **standard ouvert**, simple à adopter,
-- permettre une **utilisation large**, y compris commerciale,
-- offrir une **protection juridique solide** (brevets, contributions),
-- encourager les contributions sans imposer de contraintes fortes,
-- assurer la **pérennité** du protocole et de son écosystème.
+---
 
-Le texte complet de la licence est disponible dans le fichier [`LICENSE`](LICENSE).
+# 📄 License
+
+D‑Scope is distributed under the **Apache License 2.0**.
+
+This choice reflects the project’s philosophy:
+
+- ensure an **open standard**, easy to adopt,  
+- allow **broad usage**, including commercial,  
+- provide **strong legal protection** (patents, contributions),  
+- encourage contributions without heavy constraints,  
+- ensure the **long‑term durability** of the protocol and ecosystem.
+
+The full license text is available in the `LICENSE` file.
