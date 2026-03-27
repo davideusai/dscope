@@ -22,6 +22,25 @@ D‑Scope aims to become an **open, reproducible, documented, and durable standa
 
 ---
 
+# 📁 Project Tree
+```
+dscope/
+├── docs/              → Narrative documentation
+├── specs/             → Official protocol specifications
+├── registry/          → Machine‑readable registry (source of truth)
+├── dpcr/              → Protocol evolution process
+├── examples/          → Frames, CSV logs, diagrams
+├── hardware/          → Contains the full D‑Scope hardware ecosystem
+├── knowledge/         → Internal notes, research
+├── tools/             → Technical tools (validators, converters)
+├── modules/           → All embedded firmwares
+├── playground         → Experiments and prototypes
+├── libs/              → Shared libraries
+└── analyzer/          → Analysis tool, dashboards, advanced parsing
+```
+
+---
+
 # 🎯 Project Goals
 
 ## Main Objectives
@@ -249,21 +268,6 @@ Shared code:
 
 ---
 
-# 📁 Project Tree
-
-dscope/
-├── docs/              → Narrative documentation
-├── specs/             → Official protocol specifications
-├── registry/          → Machine‑readable registry (source of truth)
-├── dpcr/              → Protocol evolution process
-├── examples/          → Frames, CSV logs, diagrams
-├── hardware/          → Contains the full D‑Scope hardware ecosystem
-├── knowledge/         → Internal notes, research
-├── tools/             → Technical tools (validators, converters)
-├── modules/           → All embedded firmwares
-├── playground         → Experiments and prototypes
-├── libs/              → Shared libraries
-└── analyzer/          → Analysis tool, dashboards, advanced parsing
 
 
 ---
