@@ -275,7 +275,6 @@ dscope/
 │   ├── csv/                  → Exemples de logs CSV
 │   └── diagrams/             → Diagrammes et illustrations
 │
-
 ├── tools/                    → Outils techniques
 │   ├── validators/           → Scripts de validation
 │   └── converters/           → Scripts de conversion
@@ -295,29 +294,95 @@ dscope/
 │       ├── src/
 │       └── include/
 │
-└── analyzer/                 → Outil d’analyse D‑Scope
-    ├── README.md             → Présentation générale de l’Analyzer
+├── analyzer/                 → Outil d’analyse D‑Scope
+│   ├── README.md             → Présentation générale de l’Analyzer
+│   │
+│   ├── src/                  → Code source principal
+│   │   ├── core/             → Parsing, validation, registry loading
+│   │   ├── ui/               → Interface (CLI, web, desktop)
+│   │   ├── widgets/          → Widgets graphiques
+│   │   ├── exporters/        → CSV, JSON, MQTT, InfluxDB…
+│   │   └── utils/
+│   │
+│   ├── plugins/              → Extensions externes
+│   │   └── README.md
+│   │
+│   ├── examples/             → Exemples Analyzer
+│   │   ├── frames/           → Trames d’exemple
+│   │   ├── sessions/         → Sessions d’analyse
+│   │   └── dashboards/       → Dashboards préconfigurés
+│   │
+│   └── docs/                 → Documentation utilisateur
+│       ├── installation.md
+│       ├── usage.md
+│       ├── dashboards.md
+│       └── plugins.md
+│
+├── analyzer/                 → Outil d’analyse D‑Scope
+│   ├── README.md             → Présentation générale de l’Analyzer
+│   │
+│   ├── src/                  → Code source principal
+│   │   ├── core/             → Parsing, validation, registry loading
+│   │   ├── ui/               → Interface (CLI, web, desktop)
+│   │   ├── widgets/          → Widgets graphiques
+│   │   ├── exporters/        → CSV, JSON, MQTT, InfluxDB…
+│   │   └── utils/
+│   │
+│   ├── plugins/              → Extensions externes
+│   │   └── README.md
+│   │
+│   ├── examples/             → Exemples Analyzer
+│   │   ├── frames/           → Trames d’exemple
+│   │   ├── sessions/         → Sessions d’analyse
+│   │   └── dashboards/       → Dashboards préconfigurés
+│   │
+│   └── docs/                 → Documentation utilisateur
+│       ├── installation.md
+│       ├── usage.md
+│       ├── dashboards.md
+│       └── plugins.md
+│
+└── hardware/                 → Écosystème matériel D‑Scope
+    ├── common/               → Ressources partagées
+    │   ├── symbols/          → Symboles électroniques communs
+    │   ├── footprints/       → Empreintes communes
+    │   └── templates/        → Modèles de schémas / PCB
     │
-    ├── src/                  → Code source principal
-    │   ├── core/             → Parsing, validation, registry loading
-    │   ├── ui/               → Interface (CLI, web, desktop)
-    │   ├── widgets/          → Widgets graphiques
-    │   ├── exporters/        → CSV, JSON, MQTT, InfluxDB…
-    │   └── utils/
+    ├── guidelines/           → Règles globales de conception
+    │   ├── design-rules.md
+    │   ├── naming-conventions.md
+    │   └── electrical-rules.md
     │
-    ├── plugins/              → Extensions externes
-    │   └── README.md
-    │
-    ├── examples/             → Exemples Analyzer
-    │   ├── frames/           → Trames d’exemple
-    │   ├── sessions/         → Sessions d’analyse
-    │   └── dashboards/       → Dashboards préconfigurés
-    │
-    └── docs/                 → Documentation utilisateur
-        ├── installation.md
-        ├── usage.md
-        ├── dashboards.md
-        └── plugins.md
+    └── modules/              → Hardware spécifique à chaque module
+        ├── comfort/
+        │   ├── schematics/   → Schémas du module Comfort
+        │   ├── pcb/          → PCB du module Comfort
+        │   ├── bom.csv       → BOM spécifique
+        │   └── tests/        → Tests hardware
+        │
+        ├── flow/
+        │   ├── schematics/
+        │   ├── pcb/
+        │   ├── bom.csv
+        │   └── tests/
+        │
+        ├── energy/
+        │   ├── schematics/
+        │   ├── pcb/
+        │   ├── bom.csv
+        │   └── tests/
+        │
+        ├── hub/
+        │   ├── schematics/
+        │   ├── pcb/
+        │   ├── bom.csv
+        │   └── tests/
+        │
+        └── hvac-pac/
+            ├── schematics/
+            ├── pcb/
+            ├── bom.csv
+            └── tests/
 ```
 ---
 
