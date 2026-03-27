@@ -5,7 +5,20 @@
 # [~] en cours  
 # [x] fait  
 
-Mise à jour : 2026‑03‑26
+Mise à jour : 2026‑03‑27
+
+---
+
+## Documentation
+- Rédiger un premier schéma d'architecture
+
+---
+
+## Playground
+
+- [~] Test sonde température T
+- [~] Test sonde température B
+- [~] Test display TFT
 
 ---
 
@@ -54,8 +67,5 @@ Mise à jour : 2026‑03‑26
 
 - Support PIC complet (XC8 + Registry)
 - Module Flow v2 avec débitmètre haute précision
-- Exporter InfluxDB pour l’Analyzer
 - Dashboard web temps réel
-- Génération automatique de documentation depuis le Registry
 - Tests unitaires pour dscope-protocol
-- Module Energy v2 (mesure triphasée)
