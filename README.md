@@ -38,17 +38,11 @@ The project aims to be **reproducible, durable, and fully documented**, with a c
 ```
 dscope/
 ├── docs/              → Human‑oriented documentation
-├── specs/             → Official protocol specifications
-├── registry/          → Machine‑readable source of truth
 ├── dpcr/              → Protocol evolution process
-├── examples/          → Frames, CSV logs, diagrams
 ├── hardware/          → Hardware ecosystem
 ├── knowledge/         → Research & internal notes
-├── tools/             → Validators, converters, utilities
-├── modules/           → Embedded firmwares
-├── playground/        → Experiments & prototypes
 ├── libs/              → Shared libraries
-└── analyzer/          → Dashboards & advanced parsing
+└── software/          → Dashboards
 ```
 
 Each directory contains its own dedicated README with detailed information.
@@ -60,11 +54,7 @@ Each directory contains its own dedicated README with detailed information.
 If you’re new to D‑Scope, start here:
 
 1. **docs/** → Overview, architecture, concepts  
-2. **specs/** → Protocol rules and normative definitions  
-3. **registry/** → Machine‑readable fields and modules  
-4. **playground/** → Sensor and module experiments  
-5. **modules/** → Firmware implementations  
-6. **analyzer/** → Data processing and visualization  
+2. **hardware/modules/** → Choose the module you are interested in
 
 ---
 
@@ -72,8 +62,7 @@ If you’re new to D‑Scope, start here:
 
 - **Modules** send simple radio frames (`key=value`)  
 - The **Hub** enriches frames and publishes them locally  
-- The **Analyzer** computes and visualizes data  
-- The **Registry** defines all fields and module types  
+- The **Analyzer** computes and visualizes data   
 - The **DPCR** process governs protocol evolution  
 
 Each of these components is documented in its own section of the repository.
