@@ -46,18 +46,17 @@ This layered approach ensures fast experimentation, clean separation of responsi
 
 ---
 
-# 📁 Repository Structure
-```
-dscope/
-├── docs/              → Human‑oriented documentation
-├── dpcr/              → Protocol evolution process
-├── hardware/          → Hardware ecosystem
-├── knowledge/         → Research & internal notes
-├── libs/              → Shared libraries
-└── software/          → Dashboards
-```
+# 📎 Project Navigation
 
-Each directory contains its own dedicated README with detailed information.
+To explore the project in depth, you can jump directly to the dedicated sections:
+
+- **docs/** → Global documentation, architecture, concepts  
+- **dpcr/** → D‑Scope Protocol & Registry (DS‑000)  
+- **hardware/** → Modules, electronics, schematics, production notes
+- **knowledge/** → Notes, research, experiments, engineering references
+- **knowledge/sketches/** → All STM32/Arduino prototypes and experimental sketches  
+- **libs/** → Shared libraries and reusable components  
+- **software/** → Analyzer 
 
 ---
 
@@ -65,19 +64,8 @@ Each directory contains its own dedicated README with detailed information.
 
 If you’re new to D‑Scope, start here:
 
-1. **docs/** → Overview, architecture, concepts  
-2. **hardware/modules/** → Choose the module you are interested in
-
----
-
-# 🧩 Key Concepts
-
-- **Modules** send simple radio frames (`key=value`)  
-- The **Hub** enriches frames and publishes them locally  
-- The **Analyzer** computes and visualizes data   
-- The **DPCR** process governs protocol evolution  
-
-Each of these components is documented in its own section of the repository.
+1. [**docs/**](docs/architecture/README.md) → Overview, architecture, concepts  
+2. [**hardware/modules/**](/hardware/modules/README.md) → Choose the module you are interested in  
 
 ---
 
