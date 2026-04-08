@@ -1,0 +1,1 @@
+https://www.hackster.io/LithiumION/pt-1000-based-temperature-meter-arduino-af2ea3
